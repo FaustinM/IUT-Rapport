@@ -1,0 +1,52 @@
+\usepackage[a4paper,top=50pt,bottom=50pt,left=30pt,right=30pt]{geometry}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+% \usepackage{lmodern}
+% Font
+\usepackage{sectsty}
+\usepackage{longtable}
+\usepackage[sfdefault, rm]{roboto}
+\usepackage[T1]{fontenc}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cerbere-primary,
+    urlcolor=cerbere-primary,
+}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+% No-break space cara
+% \DeclareUnicodeCharacter{00A0}{~}
+
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{\rmfamily}
+
+\newcommand{\Vect}{\overrightarrow}
+\everymath{\displaystyle}
+
+\newcommand{\Entete}[2][\today]{
+    \pagestyle{fancy}
+    \fancyhf{}
+    \lhead{Faustin MILLET}
+    \chead{#2}
+    \rhead{#1}
+    \fancyfoot[R]{Page \thepage/\pageref{LastPage}}
+    \begin{center}
+        \huge{\textbf{#2}}
+    \end{center}
+    \noindent\rule{\textwidth}{0.5pt}
+    Observations générales
+    \vspace{100pt}
+
+    \noindent\rule{\textwidth}{0.5pt}
+}
+
+\newcommand{\q}[1]{``#1''}
+\newcommand{\code}[1]{\texttt{#1}}

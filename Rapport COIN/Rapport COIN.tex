@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage[export]{adjustbox}
+\usepackage{./faustin}
+\usepackage{xcolor}
+
+\definecolor{cerbere-primary}{HTML}{1121AD}
+\definecolor{cerbere-secondary}{HTML}{E7E9F7}
+\begin{document}
+% ----------------------------------------------------------------
+\begin{titlepage}
+\newgeometry{left=7.5cm} %defines the geometry for the titlepage
+\pagecolor{cerbere-primary}
+\noindent
+\includegraphics[width=3cm]{cerbere.png}\hspace*{.2in}\includegraphics[width=3cm]{logo.png}\\[-1em]
+\color{white}
+\makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
+\par
+\noindent
+\textbf{\textsf{Faustin MILLET et Clément PACAUL}}, élèves dans le groupe 1E
+\vfill
+\noindent
+{\huge\rmfamily{Projet Coin - Cerbère}}
+\vskip\baselineskip
+\noindent
+\textsf{Décembre 2022}
+\end{titlepage}
+\restoregeometry % restores the geometry
+\nopagecolor% Use this to restore the color pages to white
+% ----------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\rmfamily{Faustin MILLET et Clément PACAUL}}
+\chead{\rmfamily{Projet Coin - Cerbère}}
+\rhead{\rmfamily{\today}}
+\fancyfoot[R]{\rmfamily{Page \thepage/\pageref{LastPage}}}
+\fancyfoot[L]{\raisebox{-.35\height}{\includegraphics[width=7ex]{logo_black.png}}\hspace{.2cm}---\hspace{.2cm}\rmfamily{Cerbère}}
+{
+\hypersetup{linkcolor=black}
+\tableofcontents
+}
+\newpage
+
+\section{Introduction}
+Ces dernières années, les entreprises françaises et l'état sont de plus en plus vigilent à la souveraineté numérique. En effet, en utilisant des services d'entreprises étrangères, les données des entreprises peuvent être utilisés par des intelligences étrangères, par exemple la NSA avec l'affaire soulevé par Edward Snowden.
+
+Néanmoins, les entreprises ne peuvent tout assurer en interne, elles doivent déléguer et faire appeler à de la prestation de service. En 2016, l'Agence nationale de la sécurité des systèmes d'information (\textbf{ANSSI}) a crée le label \q{SecNumCloud} qui permet de certifier une entreprise du service numérique autant dans la sécurité, la qualité et la confiance qu'on peut accorder à la solution proposée.
+
+Pour répondre aux besoins des entreprises, que ce soit dans la souveraineté ou dans le besoin de solution, Cerbère a été crée. Cerbère est une solution d'authentification centralisée sous forme d'un logiciel en tant que service ou \textit{SaaS}. Il permet à des PME et TPE de bénéficier d'un haut niveau de sécurité pour accéder à leurs applications métiers, tout en ayant un logiciel simple et accessible pour leurs collaborateurs non-informaticien. Il permet également à des grandes entreprises d'avoir une solution mise à jour et disponible tout en étant adapté aux besoins de décentralisations (par exemple, en laissant la possibilité à un responsable de région de provisionner des comptes et leur attribuer des droits en toute simplicité et sans faire appel à un responsable des systèmes d'information).
+
+Ce document contient donc la charte graphique du site, les sources externes et enfin la vérification du site à l'aide de la norme du W3C.
+\section{Charte graphique}
+Cerbère est donc une entreprise de service numérique, son slogan est \q{Garder la main sur vos données}
+\subsection{Le logo}
+Notre logo symbolise l'animal mythologique Cerbère. Il est utilisable principalement en deux variantes, dans la couleur primaire du site ou en blanc. Cependant, il s'adapte bien au changement de couleur. Il ne doit pas être déformé. Le logo a été crée pour le projet.
+\bigskip
+\begin{center}
+    \includegraphics[width=3cm,keepaspectratio]{logo_black.png}
+    \hspace{2cm}
+    \includegraphics[width=3cm,keepaspectratio]{logo_nav.png}
+\end{center}
+\bigskip
+\subsection{Choix des couleurs}
+Les couleurs ont été choisies pour permettre une bonne visibilité et rappeler l'idée de confiance derrière Cerbère.
+\bigskip
+
+\fcolorbox{black}{cerbere-primary}{\rule{0pt}{10pt}\rule{10pt}{0pt}}\quad Couleur principale - 1121AD
+
+\fcolorbox{black}{cerbere-secondary}{\rule{0pt}{10pt}\rule{10pt}{0pt}}\quad Couleur secondaire - E7E9F7
+
+\fcolorbox{black}{white}{\rule{0pt}{10pt}\rule{10pt}{0pt}}\quad Couleur de fond - FFFFFF
+\bigskip
+
+La couleur principale est utilisé pour mettre en valeur un élément : bouton, titre, survole d'un élément. Elle est au cœur de la marque.
+
+La couleur secondaire permet de détacher un contenu, nous l'utilisons principalement comme couleur de fond. Nous ne pouvons pas l'utiliser en couleur de texte, elle n'est pas assez lisible. Cependant, elle permet de mettre du contenu sans surcharger la page, par exemple les logos de nos différents partenaires sur la page d'accueil.
+
+Enfin, le blanc est utilisé comme couleur de fond, nous l'avons indiqué, car une deuxième palette est présente dans le css et permet d'avoir un thème sombre. Cependant, par faute de temps, la palette n'est pas activée, nous aurions souhaité utiliser la media-query \href{https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme}{prefers-color-scheme} mais certains éléments aurait nécessité d'être retravaillé.
+
+\subsection{Police d'écriture}
+Deux polices d'écritures sont disponibles, \textit{Roboto Slab} est utilisé pour les titres et les informations mises en valeur et \textit{Roboto} est utilisé pour tous les textes afin de simplifier la lecture. Pour mettre du texte en avant nous utilisons à la fois la couleur primaire et la mise en gras.
+
+Ces deux polices et leurs variantes (gras et italique) sont issues de \textit{Google Font} et sont sous la licence \textit{Apache License, Version 2.0} qui nous permet d'utiliser librement cette police.
+
+\section{Ressources externes}
+\subsection{Pictogrammes et images}
+Les différents icônes et pictogrammes sont issues de \href{https://fontawesome.com}{Font Awesome}, les SVG sont sous la licence \textit{CC BY 4.0} qui nous permet d'utiliser les ressources librement avec attribution des ressources.
+\\
+
+Les logos sur la page d'accueil sont issues de la vectorisation ou des fichiers officiels donnés par les marques :
+\begin{itemize}
+    \item \href{https://brand.netflix.com/#/assets/logos}{Netflix}
+    \item \href{https://corporate.ovhcloud.com/en/newsroom/assets/}{OVH}
+    \item \href{https://brandcenter.carrefour.com/public/les_regles_dusage_du_logotype.html}{Carrefour}
+    \item \href{https://deezerbrand.com/d/9wmMErzrRuiH/brand-elements}{Deezer}
+\end{itemize}
+
+Suivant l'\href{https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Autorisation_d%27utilisation_d%27image/Logo}{Avis de Wikipedia sur l'utilisation des logos}, il y a une tolérance à leur utilisation. Cependant il faudrait dans l'idéal contacter l'entreprise pour s'assurer de son accord.
+\\
+
+L'illustration présente sur la page d'accueil à droite du slogan provient de \href{https://storyset.com}{Storyset} qui l'offre contre une attribution.
+\\
+
+L'image de fond en base de la page d'accueil provient du site \href{https://unsplash.com/photos/hxi_yRxODNc}{Unsplash}, le site a sa propre licence, dans notre situation, nous pouvons utiliser l'image sans restriction.
+\\
+
+L'illustration d'exemple de Cerbère a été crée pour le projet. Le logo français a également été créé pour le projet.
+
+\subsection{Code externe}
+Nous utilisons \href{https://leafletjs.com}{Leaflet} pour afficher la carte d'OpenStreetMap. La carte d'OpenStreetMap a été crédité sur le site en accord avec leur licence. Le code Javascript qui initialise la carte a été créé pour le projet.
+
+Nous utilisons également l'instance PeerTube \href{https://framatube.org}{Framatube} pour afficher la vidéo sur la page d'accueil avec l'intégration d'une iframe.
+
+Enfin pour harmoniser les styles par défaut des navigateurs, nous utilisons un reseter. C'est une version adaptée du projet \href{https://github.com/resetercss/reseter.css/blob/main/css/minireseter.css}{reseter.css}
+
+\subsection{Inspiration}
+Nous avons utilisé le site \href{https://dribbble.com/}{Dribbble} pour avoir des idées de design, nous avons également regardé des projets qui proposent une solution similaire comme \href{https://www.okta.com/}{Okta} ou \href{https://auth0.com}{auth0}.
+
+\section{Norme et validation automatique}
+Nous avons utilisé le vérificateur W3C pour vérifier le bon respect de la norme.
+
+Sur la page d'accueil, les erreurs restantes concernent principalement l'iframe que je n'ai pas modifié pour m'assurer une compatibilité avec les spécificités de chaque navigateur. Il y a également une erreur sur l'utilisation d'une balise button dans une balise a, nous n'avons pas voulu la régler pour éviter de refaire tout le code lié aux ancres et aux boutons.
+
+Sur la page de contact, il reste 2 erreurs, nous avons utilisé une balise h3 pour indiquer le pays de l'adresse, mais nous ne pouvons pas l'utiliser. Sachant que le pays est un élément essentiel dans l'adresse, il était difficile de le sortir du bloc. Sachant que l'utilisation d'un titre est cohérente avec le reste du contenu de la page.
+
+Enfin, la page produit, contient également une balise button dans une balise a.
+
+Le css ne contient pas d'erreur et respect parfaitement la norme.
+\end{document}
