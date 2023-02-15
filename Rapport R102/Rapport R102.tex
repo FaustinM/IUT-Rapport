@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[french]{babel}
+\usepackage{../faustin}
+
+\definecolor{ups}{HTML}{63003C}
+\begin{document}
+% ----------------------------------------------------------------
+\begin{titlepage}
+\newgeometry{left=7.5cm} %defines the geometry for the titlepage
+\pagecolor{ups}
+\noindent
+\includegraphics[width=3cm]{../logo.png}\\[-1em]
+\color{white}
+\makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
+\par
+\noindent
+\textbf{\textsf{Faustin MILLET}}, élève en 1A
+\vfill
+\noindent
+{\huge \textsf{Projet R1.02}}
+\vskip\baselineskip
+\noindent
+\textsf{Novembre 2022}
+\end{titlepage}
+\restoregeometry % restores the geometry
+\nopagecolor% Use this to restore the color pages to white
+% ----------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Faustin MILLET}
+\chead{Projet S104 - Premier rapport}
+\rhead{5 novembre 2022}
+\fancyfoot[R]{Page \thepage/\pageref{LastPage}}
+{
+\hypersetup{linkcolor=black}
+\tableofcontents
+}
+\newpage
+
+\part{Livre électronique}
+\setcounter{section}{0}
+\section{Norme dans le livre numérique}
+La première étape pour commencer à créer un livre numérique, c'est de trouver l'organisation qui y est lié. L'organisation qui a créé le format EPUB, l'International Digital Publishing Forum, ne se statue pas sur le découpage des fichiers HTML. 
+
+Dans le cadre du projet, j'ai donc décidé de suivre un découpage naturel, tout d'abord les gros chapitres du livre sont séparé dans des fichiers XHTML différent. Et pour éviter que les lots de paragraphes soient sur la même page, ils sont également séparés en plusieurs fichiers HTML
+
+\section{Affichage des lots de paragraphes}
+Les lots de paragraphes ne sont pas affichés dans la table des matières et dans le défilement d'une liseuse. En effet, ils ne sont pas inscrits dans le fichier toc.html, et ils sont marqués comme non linéaire dans le \code{spine} de \code{package.opf}. Les lots de paragraphes ont été choisi pour assurer une continuité dans l'histoire.
+
+\section{Vérification automatisé du EPUB}
+L'EPUB passe les vérifications automatiques avec le logiciel \href{https://github.com/w3c/epubcheck}{Epubcheck du W3C}. Les erreurs restantes sont autour de lien non présent à cause de la restriction à 30 paragraphes
+
+\section{Choix de la présentation}
+J'ai choisi de garder la présentation la plus proche du modèle fourni, j'ai donc intégré les liens entres les pages directement dans le texte. L'espace vide autour des paragraphes permet au lecteur de s'isolé dans son histoire et de ne pas être perturbé par d'autres paragraphes, cependant, il est possible de rajouter des images pour remplir. 
+
+\section{EPUB et Accessibilité}
+En tant que développeur, nous devons nous assureur de l'accessibilité de nos projets au plus grand nombre. Lors de ce projet EPUB, je me suis donc assuré que le livre numérique respecte les règles du DAISY Consortium, une association qui accompagne les éditeurs et développeurs dans l'adoption des normes d'accessibilité. Concrètement le \code{package.opf} contient des options en plus, toutes mes images possèdent un attribue \code{alt}, les niveaux de titres sont bien organisés.
+
+\section{Tableau d'attaque de monstre}
+Pour simplifier la lecture du tableau d'attaque de monstre, l'écriture à base de tabulation a été corrigé en tableau HTML
+
+\section{Extraction du contenu du PDF}
+Certains contenus sont difficiles à récupérer dans un PDF, à l'aide de différents sites, on peut facilement extraire les images. Cependant sans faire son propre script, il est difficile d'extraire en grande quantité, j'ai donc essayé de faire un script qui extrayait le contenu du PDF. J'ai donc pu gagner du temps, mais j'ai aussi passé beaucoup de temps à retravailler les lots de paragraphes que je récupérais après une extraction.
+J'ai également fait des scripts pour automatiser la compression d'un projet de livre numérique, tout comme les tests automatiques. Je pouvais donc très facilement vérifier l'état de mon livre numérique.
+
+\part{Traduction du livre numérique en site statique}
+\setcounter{section}{0}
+
+Si les fichiers du livre numérique sont clairs, le passage vers un site statique se fait aisément. Il faut prêter attention aux fichiers de style qui impactent le plus l'affichage. En effet, certains outils que l'alignement du texte au centre ne doit pas être sur-utilisé sur ordinateur et à l'inverse les grilles ou les flexbox ne sont pas compatible avec les liseuses. J'ai donc crée une nouvelle feuille de style en adaptant celle provenant de l'ebook 
+
+De plus il faut prévoir l'ajout d'éléments pour faire le lien entre les pages. Dans mon cas, j'ai une barre de navigation, le footer qui fait le lien vers la page de copyright et les liens dans le contenu des pages que ce soit le bouton suivant en bas de page ou du texte.
+
+Comme pour le livre numérique, différents scripts ont été créés pour modifier un grand nombre de fichiers rapidement.
+
+\section{Un site responsive}
+Le site statique est compatible aussi bien sur ordinateur, que sur tablette et sur téléphone. En utilisant des propriétés comme max-width et des outils comme flexbox, le site est toujours utilisable quelque soit les conditions et la taille de l'écran.
+
+\section{La fiche du joueur recodé}
+La fiche du joueur a été refaite entièrement grâce à la technologie grid, la fiche du joueur est donc de très bonne qualité, responsive également et peut facilement avec du script devenir dynamique. En plus de cette fiche joueur, j'ai ajouté un dé virtuel nécessaire pour pouvoir faire certaines actions spécifiques dans le jeu. Le joueur peut donc lancer un dé sans quitter son jeu.
+
+\section{Une ambiance musicale}
+Suivant les lots de paragraphes, le joueur pourra avoir différentes musiques pour être plus intégré au jeu. Toutes ces musiques sont libres de droits et compressé pour pouvoir être utilisable sur le web.
+
+\section{La page d'accueil}
+La page d'accueil mets en avant le livre à l'instar d'une page de couverture, tout en présentant le livre et les conditions techniques du projet. En effet, la musique est par défaut bloqué sur certains navigateurs.
+
+\end{document}
